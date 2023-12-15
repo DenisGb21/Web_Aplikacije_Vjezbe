@@ -12,8 +12,25 @@
         </style>
     </head>
     <body>
-        <form>
-            
+        <form method="post" id="post1" name="post1">
+        <label for="Ime">First Name * </label><br>
+        <input type="text" id="name" name="Ime" placeholder="Your first name..."><br>
+        <label for="Prezime">Last Name * </label><br>
+        <input type="text" id="Prezime" name="Prezime" placeholder="Your last name..."><br>
+        <label for="email">Your E-mail: </label><br>
+        <input type="email" id="email" name="E-mail" placeholder="Your e-mail"><br>
+        <label for="country">Country:</label><br>
+            <select id="country" name="country">
+            <option value="">Please select</option>
+            <option value="BE">Belgium</option>
+            <option value="HR" selected>Croatia</option>
+            <option value="LU">Luxembourg</option>
+            <option value="HU">Hungary</option>
+            </select><br>
+            <label for="Message">Message:</label><br>
+            <input type="text" id="message" name="message" placeholder="Write something..."><br>
+        <input type="submit" velue="Pošalji">
+        <input type="submit" velue="Poništi"><br>
 
         </form>
     </body>
