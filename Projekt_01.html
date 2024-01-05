@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="hr">
+
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/x-icon" href="C:\Users\denis\Documents\Web_Aplikacije_Vjezbe\favicon_01.ico">
         <title>Autolakirnica Grbac</title>
+
         <style>
-            
-            /*margine*/
+
             *{
-                padding: 0;
                 margin: 0;
+                padding: 0;
             }
 
-            /* tijelo stranice, fontovi, pozadina */
             body{
                 min-height: 100vh;
                 background-image: url(Pictures/Slika.jpg);
@@ -21,13 +21,11 @@
                 background-position: center;
                 font-family: sans-serif, Verdana, Geneva, Tahoma, sans-serif;
             }
-
-            /*pozadina navigacije*/
             nav{
                 background-color: white;
                 box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
             }
-            /*upravljanje neuredenom listom unutar navigacije, sirina kontejnera 100%, */
+
             nav ul{
                 width: 100%;
                 list-style: none;
@@ -35,11 +33,11 @@
                 justify-content: flex-end;
                 align-items: center;
             }
-            /*visina izmedu teksta na navigaciji, primarno za vertikalnu navigaciju */
+
             nav li{
                 height: 50px;
             }
-            /*tekst unutar navigacije, upravljanje njime*/
+
             nav a{
                 height: 100%;
                 padding: 0 30px;
@@ -48,15 +46,15 @@
                 align-items: center;
                 color: black;
             }
-            /*pozadina teksta na navigaciju, pokazuje se kada prodemo misem preko*/
+
             nav a:hover{
                 background-color: #f0f0f0;
             }
-            /*margina ce djelovati samo na prvu navigaciju, druga navigacije ce ostati kakva jer jer nije "first-child"*/
+
             nav li:first-child{
                 margin-right: auto;
             }
-            /*klasa za vertikalnu navigaciju jer smo ju primjenili samo na nju*/
+
             .sstrane{
                 position: fixed;
                 top: 0;
@@ -66,57 +64,57 @@
                 z-index: 999;
                 background-color: rgb(255, 255, 255, 0.1);
                 backdrop-filter: blur(10px);
-                box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.1);
+                box-shadow: -10 0 10 rgba(0, 0, 0, 0.1);
                 display: none;
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: flex-start;
             }
-            /*ispuna polja za kliknuti na vertikalnoj navigaciji, ispunili smo 100% polja. Postavom od 10% bi ispunili samo 1/10 sirine od 250px, ako imamo dugacak tekst, prepolovio bi se, te bi time i samo polje bilo manje za kliknuti*/
+
             .sstrane li{
                 width: 100%;
             }
-            /*dodatna sigurnost kao prijasnja linija koda*/
+
             .sstrane a{
                 width: 100%;
             }
-            /*sakrivanje menu gumba dok ekran nije siri od 650px*/
+
             .menuButton{
                 display: none;
             }
-            
-            /*maksimalna sirina za prikavizanje navigacije, kada ekran bude uzi od 650px, tada ce se pojaviti menu button*/
+
             @media(max-width: 650px){
                 .hideOnMobile{
                     display: none;
                 }
                 .menuButton{
-                display: block;
+                    display: block;
                 }
             }
-            /*vertikalna navigacija se prosi na cijeli zaslon*/
+
             @media(max-width: 400px){
                 .sstrane{
                     width: 100%;
                 }
             }
-            /*podnozje stranice*/
-            footer{
+
+            footer {
                 text-align: center;
                 padding: 3px;
                 background-color: #5d5e63;
                 color: white;
             }
 
+            
 
         </style>
-    </head>
-    <body>
 
-        <!--Navigacija -->
+    </head>
+
+    <body>
         <nav>
             <ul class="sstrane">
-                <li onclick="hideSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li onclick="closeSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
                 <li><a href="C:\Users\denis\Documents\Web_Aplikacije_Vjezbe\Cjenik.html">Cjenik</a></li>
                 <li><a href="C:\Users\denis\Documents\Web_Aplikacije_Vjezbe\Kontakt.html">Kontakt</a></li>
                 <li><a href="C:\Users\denis\Documents\Web_Aplikacije_Vjezbe\O_nama.html">O nama</a></li>
@@ -129,20 +127,19 @@
                 <li class="menuButton" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
             </ul>
         </nav><br>
-        
-        <!--skripta za funkciju gumbova. Otvaranje/zatvaranje vertikalne navigacije-->
+
         <script>
             function showSidebar(){
                 const sstrane = document.querySelector('.sstrane')
                 sstrane.style.display = 'flex'
             }
-            function hideSidebar(){
+
+            function closeSidebar(){
                 const sstrane = document.querySelector('.sstrane')
                 sstrane.style.display = 'none'
             }
-
         </script>
 
-        <footer>CopyRight &copy; Denis Grbač</p></footer>
+        <footer> CopyRight &copy; Denis Grbač</p></footer>
     </body>
 </html>
